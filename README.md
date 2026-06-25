@@ -6,6 +6,12 @@
  - Routing
  - Form Validation
  - useRef() Hook
+ -Firebase setup
+ -Deploying our app to production
+ -Create signUp user Account
+ -Implement Signin user Api
+ -Created our redux store with userSlice
+
 
 
  # FEATURES
