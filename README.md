@@ -16,6 +16,9 @@
  -navigated to browse once authenticated
  -BugFix: update profile's displayName and photoURL
  -BugFix: User logged in and access to login page it navigates to browse page and also in vice-versa
+ -undubcribed to the onAuthStateChanged callback
+ -register TMDB and app get api key and acces token
+ -get data from tmdb now playing list api
 
 
 
