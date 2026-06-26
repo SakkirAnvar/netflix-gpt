@@ -14,6 +14,8 @@
  -Signout functionality
  -update profile firebase
  -navigated to browse once authenticated
+ -BugFix: update profile's displayName and photoURL
+ -BugFix: User logged in and access to login page it navigates to browse page and also in vice-versa
 
 
 
