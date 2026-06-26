@@ -4,13 +4,21 @@ import { checkValidateData } from "../utils/validate";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../slice/userSlice";
 
 const Login = () => {
   const [isLoginForm, setIsLoginForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
 
+  const dispatch = useDispatch()
+
+  const navigate = useNavigate();
+  const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
 
@@ -31,7 +39,25 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
-          console.log(user);
+          updateProfile(user, {
+            displayName: name.current.value,
+            photoURL: "https://avatars.githubusercontent.com/u/121098014?v=4",
+          })
+            .then(() => {
+              const { uid, displayName, email, photoURL } = auth.currentUser;
+                      dispatch(
+                        addUser({
+                          uid: uid,
+                          displayName: displayName,
+                          email: email,
+                          photoURL: photoURL,
+                        }),
+                      );
+              navigate("/browse");
+            })
+            .catch((error) => {
+              setErrorMessage(error.message);
+            });
         })
         .catch((error) => {
           //const errorCode = error.code;
@@ -39,11 +65,16 @@ const Login = () => {
           setErrorMessage(errorMessage);
         });
     } else {
-      signInWithEmailAndPassword(auth,email.current.value, password.current.value)
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value,
+      )
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
           console.log(user);
+          navigate("/browse");
 
           // ...
         })
@@ -76,6 +107,7 @@ const Login = () => {
         </h1>
         {!isLoginForm && (
           <input
+            ref={name}
             type="text"
             placeholder="Full Name"
             className="p-2 my-2 w-full rounded-sm  bg-gray-900"

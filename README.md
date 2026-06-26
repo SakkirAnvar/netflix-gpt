@@ -11,6 +11,9 @@
  -Create signUp user Account
  -Implement Signin user Api
  -Created our redux store with userSlice
+ -Signout functionality
+ -update profile firebase
+ -navigated to browse once authenticated
 
 
 
