@@ -26,7 +26,13 @@
  -Fetch data from trailer video
  -update store with trailer video data
  -embeded the youtube video with autoplay and mute
- -Tailwind classes to make Container lok awesome
+ -Tailwind classes to make Container look awesome
+ -Build SecondaryComponent
+ -Build MovieList
+ -Build Moviecard
+ -TMDB IMG_CDN_URL
+ -Made the Browse page amazing with tailwind css
+ -usePopularMovies, upcomingMovies, topRatedMovies custom hook
 
 
 
