@@ -16,9 +16,17 @@
  -navigated to browse once authenticated
  -BugFix: update profile's displayName and photoURL
  -BugFix: User logged in and access to login page it navigates to browse page and also in vice-versa
- -undubcribed to the onAuthStateChanged callback
+ -unsubcribed to the onAuthStateChanged callback
  -register TMDB and app get api key and acces token
  -get data from tmdb now playing list api
+ -custom hook for nowPlayingMovies
+ -Create movieSlice
+ -Update store with movieSlice
+ -Planning for main container and secondaryContainer
+ -Fetch data from trailer video
+ -update store with trailer video data
+ -embeded the youtube video with autoplay and mute
+ -Tailwind classes to make Container lok awesome
 
 
 
