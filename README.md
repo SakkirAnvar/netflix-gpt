@@ -33,7 +33,7 @@
  -TMDB IMG_CDN_URL
  -Made the Browse page amazing with tailwind css
  -usePopularMovies, upcomingMovies, topRatedMovies custom hook
-
+ -GPT Search Filter
 
 
  # FEATURES
